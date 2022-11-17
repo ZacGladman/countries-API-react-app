@@ -20,7 +20,7 @@ export interface Country {
     landlocked: boolean,
     borders: string[],
     area: number,
-    denonyms: unknown,
+    demonyms: unknown,
     flag: string,
     maps: Maps,
     population: number,
@@ -39,12 +39,12 @@ export interface Country {
 interface CountryName {
     common: string,
     official: string,
-    nativeName: {}
+    nativeName: unknown
 }
 
 interface Idd {
     root: string,
-    suffixes: string
+    suffixes: string[]
 }
 
 interface Translations {
@@ -65,6 +65,8 @@ interface Translations {
     per: OfficialAndCommonTranslations,
     pol: OfficialAndCommonTranslations,
     por: OfficialAndCommonTranslations,
+    rus: OfficialAndCommonTranslations,
+    slk: OfficialAndCommonTranslations,
     spa: OfficialAndCommonTranslations,
     swe: OfficialAndCommonTranslations,
     tur: OfficialAndCommonTranslations,
