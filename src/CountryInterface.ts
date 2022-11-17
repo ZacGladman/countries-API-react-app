@@ -1,7 +1,4 @@
-import { useEffect } from "react";
-
-
-interface Country {
+export interface Country {
     name: CountryName,
     tld: string[],
     cca2: string,
@@ -11,36 +8,43 @@ interface Country {
     independent: boolean,
     status: string,
     unMember: boolean,
-    currencies: {},
-    idd: {},
+    currencies: unknown,
+    idd: Idd,
     capital: string[],
     altSpellings: string[],
     region: string,
     subregion: string,
-    languages: {},
+    languages: unknown,
     translations: Translations,
     latlng: number[],
     landlocked: boolean,
     borders: string[],
     area: number,
-    denonyms: {},
+    denonyms: unknown,
     flag: string,
     maps: Maps,
     population: number,
-    gini: {},
+    gini: unknown,
     fifa: string,
     car: Car,
     timezones: string[],
     continents: string[],
     flags: Flags,
-    coatOfArms: 
-
+    coatOfArms: CoatOfArms,
+    startOfWeek: string,
+    capitalInfo: CapitalInfo,
+    postalCode: PostalCode
 }
 
 interface CountryName {
     common: string,
     official: string,
     nativeName: {}
+}
+
+interface Idd {
+    root: string,
+    suffixes: string
 }
 
 interface Translations {
@@ -91,4 +95,13 @@ interface Flags {
 interface CoatOfArms {
     png: string,
     svg: string
+}
+
+interface CapitalInfo {
+    latlng: number[]
+}
+
+interface PostalCode {
+    format: string,
+    regex: string
 }
