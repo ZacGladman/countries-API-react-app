@@ -1,7 +1,13 @@
-import { greet } from "./utils/greet";
+import CountrySpecificView from "../src/components/CountrySpecificView"
+import DropDownMenu from "./components/DropDownMenu";
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return (
+    <>
+      <CountrySpecificView />
+      <DropDownMenu />
+    </>
+  );
 }
 
 export default App;
