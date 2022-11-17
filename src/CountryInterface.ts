@@ -18,7 +18,7 @@ export interface Country {
     translations: Translations,
     latlng: number[],
     landlocked: boolean,
-    borders: string[],
+    borders?: string[],
     area: number,
     demonyms: unknown,
     flag: string,
@@ -33,7 +33,7 @@ export interface Country {
     coatOfArms: CoatOfArms,
     startOfWeek: string,
     capitalInfo: CapitalInfo,
-    postalCode: PostalCode
+    postalCode?: PostalCode
 }
 
 interface CountryName {
