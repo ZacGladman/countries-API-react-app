@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Country } from "../CountryInterface";
+import DropDownMenu from "./DropDownMenu";
 
 
 const randomCountry = (countries: Country[]) => {
-    const randomIndex = Math.floor(Math.random()*(countries.length-1))
+    const randomIndex = Math.floor(Math.random()*(countries.length))
     return countries[randomIndex]
 }
 
@@ -11,6 +12,8 @@ export default function CountrySpecificView(): JSX.Element {
 
     const [country, setCountry] = useState<Country>()
     const [allCountries, setAllCountries] = useState<Country[]>([])
+    const [language, setLanguage] = useState('rus')
+
 
     useEffect(() => {
         const fetchAllCountries = async () => {
@@ -52,7 +55,11 @@ export default function CountrySpecificView(): JSX.Element {
             <>  
                 <h1 className="CountryTitle">{country.name.common}</h1>
                 <img className="FlagImage" src={country.flags.png} width="30%" height="auto" alt="country"/>
-                <h1>Country Name in Russian: {country.translations.rus.common}</h1>
+                <h1>Translation in {language}: {country.translations[language].common}</h1>
+                <DropDownMenu 
+                    language={language}
+                    setLanguage={setLanguage}
+                />
             </>
         )}
         </>

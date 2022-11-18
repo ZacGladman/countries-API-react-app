@@ -48,7 +48,7 @@ interface Idd {
 }
 
 interface Translations {
-    ara: OfficialAndCommonTranslations,
+    [ara: string]: OfficialAndCommonTranslations
     bre: OfficialAndCommonTranslations,
     ces: OfficialAndCommonTranslations,
     cym: OfficialAndCommonTranslations,
@@ -74,7 +74,7 @@ interface Translations {
     zho: OfficialAndCommonTranslations    
 }
 
-interface OfficialAndCommonTranslations{
+export interface OfficialAndCommonTranslations{
     official: string,
     common: string
 }
